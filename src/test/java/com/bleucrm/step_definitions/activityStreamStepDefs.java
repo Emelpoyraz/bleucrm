@@ -26,7 +26,6 @@ public class activityStreamStepDefs extends BasePage {
     public void userSeesBelowFiveOnActivityStreamPage(List<String> expectedOptions) {
 
         activityStreamPage.opts();
-        System.out.println(BrowserUtils.getElementsText(activityStreamPage.firstFourOps));
         Assert.assertEquals(expectedOptions, BrowserUtils.getElementsText(activityStreamPage.firstFourOps));
     }
 
@@ -38,7 +37,8 @@ public class activityStreamStepDefs extends BasePage {
     @Then("user sees below four MoreOptions under the MORE tab")
     public void userSeesBelowFourMoreOptionsUnderTheMORETab(List<String> expectedOptions) {
         userClicksMoreOptionButton();
-        System.out.println(BrowserUtils.getElementsText(activityStreamPage.moreOptions));
         Assert.assertEquals(expectedOptions,BrowserUtils.getElementsText(activityStreamPage.moreOptions));
     }
+
+
 }

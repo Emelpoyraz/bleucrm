@@ -1,5 +1,6 @@
 package com.bleucrm.pages;
 
+import com.bleucrm.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
@@ -31,12 +32,13 @@ public class ActivityStreamPage extends BasePage{
 
     public void ActivityStreamOptions(String requiredTabName){
         List<WebElement> allOptions =new ArrayList<>();
+        opts();
         allOptions.addAll(firstFourOps);
-        allOptions.add(moreTab);
+        moreTab.click();
         allOptions.addAll(moreOptions);
 
         for (WebElement eachOption : allOptions) {
-            if (eachOption.getText().equals(requiredTabName)){
+            if (eachOption.getText().equalsIgnoreCase(requiredTabName)){
                 eachOption.click();
                 break;
             }
