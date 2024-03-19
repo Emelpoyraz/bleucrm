@@ -7,21 +7,9 @@ import java.util.List;
 
 public class ActivityStreamPage extends BasePage{
 
-    /* @FindBy(id = "feed-add-post-form-tab-message")
-    public WebElement messageTab;
-
-    @FindBy(id = "feed-add-post-form-tab-tasks")
-    public WebElement taskTab;
-
-    @FindBy(id = "feed-add-post-form-tab-calendar")
-    public WebElement eventTab;
-
-    @FindBy(id = "feed-add-post-form-tab-vote")
-    public WebElement pollTab;*/
 
     @FindBy(xpath = "//span[contains(@id,'feed-add-post-form-tab')]")
     public List<WebElement> activityStreamButtons;
-
 
 
     @FindBy(id = "feed-add-post-form-link-text")
