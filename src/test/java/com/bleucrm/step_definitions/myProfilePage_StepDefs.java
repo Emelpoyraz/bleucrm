@@ -42,7 +42,13 @@ public class myProfilePage_StepDefs {
     }
 
 
+    @Then("the user verify that the displayed {string} is the same as the user's account")
+    public void theUserVerifyThatTheDisplayedIsTheSameAsTheUserSAccount(String expectedEmail) {
+
+        String actualEmail = myProfilePage.actualEmail.getText();
 
 
+        Assert.assertEquals(expectedEmail,actualEmail);
 
+    }
 }

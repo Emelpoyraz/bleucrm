@@ -13,3 +13,12 @@ Feature: Profile page verification
       | Tasks         |
       | Calendar      |
       | Conversations |
+
+
+    @biu
+    Scenario: Same email address displayed as user account
+      Given the user logged in as "<userType>"
+      Given the user logged in with username as "helpdesk78@cydeo.com" and password as "UserUser"
+      When user click to user account name
+      And user clicks to "my profile" option
+      Then the user verify that the displayed "helpdesk78@cydeo.com" is the same as the user's account
