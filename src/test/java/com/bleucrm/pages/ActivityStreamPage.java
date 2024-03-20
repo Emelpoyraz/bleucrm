@@ -8,6 +8,9 @@ import java.util.List;
 
 public class ActivityStreamPage extends BasePage{
 
+    @FindBy(xpath = "//span[@class='menu-item-link-text']")
+    public List<WebElement> mainMenuOptions;
+
 
     @FindBy(xpath = "//span[contains(@id,'feed-add-post-form-tab')]")
     public List<WebElement> activityStreamButtons;
@@ -44,5 +47,15 @@ public class ActivityStreamPage extends BasePage{
             }
         }
 
+    }
+
+    public void clickMainMenuOption(String requiredOptionName) {
+
+        for (WebElement eachOption : mainMenuOptions) {
+            if (eachOption.getText().equalsIgnoreCase(requiredOptionName)) {
+                eachOption.click();
+                break;
+            }
+        }
     }
 }
