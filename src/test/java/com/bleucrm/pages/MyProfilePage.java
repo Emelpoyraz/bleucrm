@@ -16,6 +16,10 @@ public class MyProfilePage extends BasePage{
   @FindBy(css = ".profile-menu-item")
   public List<WebElement> allOptions;
 
+  @FindBy(css = "tr td.user-profile-nowrap-second")
+  public WebElement actualEmail;
+
+
 
 
 }
