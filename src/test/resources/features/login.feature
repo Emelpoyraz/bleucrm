@@ -5,10 +5,15 @@ Feature: Users should be able to login
     Given the user is on the login page
 
   @wip
-  Scenario: Verify login with different user types
-    Given the user logged in as "<userType>"
+  Scenario Outline: Verify login with different user types
+    Given the user logged in as "<UserType>"
     #userTypes: hr, help desk, marketing
-    Given the user logged in with username as "hr16@cydeo.com" and password as "UserUser"
+    Examples:
+      | UserType  |
+      | hr        |
+      | help desk |
+      | marketing |
+
 
 
 
