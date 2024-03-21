@@ -1,7 +1,7 @@
-@wip_ebu
+@wip
 Feature: Message Sending in Active Stream
 
-  @first
+
   Scenario Outline: Sending Message with Mandatory Fields
     Given the user with username "<username>" and password "<password>" is on the Active Stream page
     When the user clicks on the Message tab
@@ -12,12 +12,12 @@ Feature: Message Sending in Active Stream
     Then the message should be sent successfully to the specified recipient(s)
 
     Examples:
-      | username              | password |
-      | hr1@cydeo.com         | UserUser |
-      | helpdesk1@cydeo.com   | UserUser |
-      | marketing1@cydeo.com  | UserUser |
+      | username             | password |
+      | hr1@cydeo.com        | UserUser |
+      | helpdesk1@cydeo.com  | UserUser |
+      | marketing1@cydeo.com | UserUser |
 
-    @second
+
   Scenario Outline: Error Messages for Mandatory Fields
     Given the user with username "<username>" and password "<password>" is on the Active Stream page
     When the user clicks on the Message tab
@@ -27,12 +27,12 @@ Feature: Message Sending in Active Stream
     Then recipient error message "Please specify at least one person." should be displayed
 
     Examples:
-      | username              | password |
-      | hr1@cydeo.com         | UserUser |
-      | helpdesk1@cydeo.com   | UserUser |
-      | marketing1@cydeo.com  | UserUser |
+      | username             | password |
+      | hr1@cydeo.com        | UserUser |
+      | helpdesk1@cydeo.com  | UserUser |
+      | marketing1@cydeo.com | UserUser |
 
-  @third
+
   Scenario Outline: Cancel sending a message before sending
     Given the user with username "<username>" and password "<password>" is on the Active Stream page
     When the user clicks on the Message tab
@@ -43,7 +43,7 @@ Feature: Message Sending in Active Stream
     Then message should not be sent
 
     Examples:
-      | username              | password |
-      | hr1@cydeo.com         | UserUser |
-      | helpdesk1@cydeo.com   | UserUser |
-      | marketing1@cydeo.com  | UserUser |
+      | username             | password |
+      | hr1@cydeo.com        | UserUser |
+      | helpdesk1@cydeo.com  | UserUser |
+      | marketing1@cydeo.com | UserUser |
