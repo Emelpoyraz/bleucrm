@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UploadFilePicturePage {
 
-    public UploadFilePicturePage(){
+    public UploadFilePicturePage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -59,7 +59,6 @@ public class UploadFilePicturePage {
     public WebElement errorRecipientMessage;
 
 
-
     @FindBy(xpath = "//button[@id='blog-submit-button-cancel']")
     public WebElement cancelButton;
 
@@ -76,9 +75,29 @@ public class UploadFilePicturePage {
     public WebElement uploadFileImageButton;
 
 
-
     @FindBy(xpath = "//span[@class='files-text']")
     public WebElement uploadedFile;
+
+
+    public void uploadFile(String fileType) {
+
+
+        //retrieves the current project path where the application is running, ensuring that the correct project path is obtained regardless of the environment
+
+        String projectPath = System.getProperty("user.dir");
+
+        //the path of the file
+        String filePath = "src/test/resources/filesToUpload/" + fileType;
+
+        //it concatenates the project path and the file path to obtain the full path of the PNG file
+        String fullFilePath = projectPath + "/" + filePath;
+
+    }
+
+
+    @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]")
+    public WebElement insertDynamic;
+
 }
 
 

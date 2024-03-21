@@ -4,49 +4,66 @@ Feature: Default
 
   @B32G4-102
   Scenario Outline: Verify User should be able to upload file and pictures
-    Given the user with "<userType>" logs in and is on the Active Stream page
-    When the user clicks on the Message tab
+    Given the user logged in as "<userType>"
+    When the user clicks on the "message" tab
     Then the user should click on the upload icon
     Then the user should click on upload files and images button
-    Then the user uploads "<fileType>" and and see it under upload files and images button
+    Then the user uploads the below files
+
+      | klm.pdf  |
+      | abc.txt  |
+      | lololo.jpeg |
+      | hohoh.png  |
+      | hopla.docx |
 
     Examples:
 
-      | userType  | fileType |
-      | hr        | pdf      |
-      | helpdesk  | txt      |
-      | marketing | jpeg     |
-      | hr        | png      |
-      | helpdesk  | docx     |
+      | userType  |
+      | hr        |
+      | helpdesk  |
+      | marketing |
+
 
 
   @B32G4-103
   Scenario Outline: Verify user should be able to insert the files and images into the text
-    Given Given the "<userType>" successfully uploads a "<fileType>"
-    When the user clicks on the insert button to upload the file into message text area
-    Then the user should see the file inserted into message text area
+    Given the user logged in as "<userType>"
+    When the user clicks on the "message" tab
+    Then the user should click on the upload icon
+    Then the user should click on upload files and images button
+    Given Given the "<userType>" successfully uploads a "fileType"
+    Then the user clicks on the insert button to upload the below fileTypes into message text area
 
+      | pdf  |
+      | txt  |
+      | jpeg |
+      | png  |
+      | docx |
 
     Examples:
-      | userType  | fileType |
-      | hr        | pdf      |
-      | helpdesk  | txt      |
-      | marketing | jpeg     |
-      | hr        | png      |
-      | helpdesk  | docx     |
 
+      | userType  |
+      | hr        |
+      | helpdesk  |
+      | marketing |
 
 
   @B32G4-104
   Scenario Outline: Verify user should be able to remove files and images at any time before sending
-    Given the "<userType>" inserted "<fileType>" successfully into message text area
+    Given the "<userType>" inserted below fileTypes successfully into message text area
     When user clicks on the x button
-    Then the message content area should not contain the removed "<fileType>"
+    Then the message content area should not contain the below removed fileTypes
+
+      | pdf  |
+      | txt  |
+      | jpeg |
+      | png  |
+      | docx |
+
 
     Examples:
-      | userType  | fileType |
-      | hr        | pdf      |
-      | helpdesk  | txt      |
-      | marketing | jpeg     |
-      | hr        | png      |
-      | helpdesk  | docx     |
+
+      | userType  |
+      | hr        |
+      | helpdesk  |
+      | marketing |
