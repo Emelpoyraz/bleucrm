@@ -32,6 +32,7 @@ Feature: Default
     And user clicks to my profile option
     Then the user verify that the displayed "<username>" is the same as the user's account
 
+
     Examples:
       | UserType  | username             |
       | hr        | hr1@cydeo.com        |
