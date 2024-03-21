@@ -1,6 +1,8 @@
 package com.bleucrm.step_definitions;
 
 import com.bleucrm.pages.MyProfilePage;
+import com.bleucrm.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,15 +19,13 @@ public class myProfilePage_StepDefs {
     public void user_click_to_user_account_name() {
 
         myProfilePage.userAccount.click();
-
     }
 
 
-    @When("user clicks to {string} option")
-    public void user_clicks_to_option(String option) {
 
-        myProfilePage.myProfileOption.click();
-
+    @When("user clicks to my profile option")
+    public void user_clicks_to_my_profile_option() {
+        myProfilePage.MyProfilePage.click();
     }
 
     @Then("user sees the following options")
@@ -33,11 +33,22 @@ public class myProfilePage_StepDefs {
 
         List<String> actualPageOptions = new ArrayList<>();
 
-        for (WebElement eachOption:myProfilePage.allOptions) {
+        for (WebElement eachOption: myProfilePage.profilePageOptions) {
             actualPageOptions.add(eachOption.getText());
         }
 
-        Assert.assertEquals(expectedOptions,actualPageOptions);
+        Assert.assertEquals(expectedOptions, actualPageOptions);
+
+    }
+
+
+    @Then("the user verify that the displayed email is the same as the user's account")
+    public void theUserVerifyThatTheDisplayedEmailIsTheSameAsTheUserSAccount() {
+
+        String displayedEmail =myProfilePage.actualEmail.getText();
+        String userAccountEmail = myProfilePage.userAccount.getText();
+
+        Assert.assertEquals(displayedEmail, userAccountEmail);
 
     }
 
@@ -46,7 +57,6 @@ public class myProfilePage_StepDefs {
     public void theUserVerifyThatTheDisplayedIsTheSameAsTheUserSAccount(String expectedEmail) {
 
         String actualEmail = myProfilePage.actualEmail.getText();
-
 
         Assert.assertEquals(expectedEmail,actualEmail);
 
