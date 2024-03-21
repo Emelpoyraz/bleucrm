@@ -2,7 +2,10 @@ package com.bleucrm.step_definitions;
 
 import com.bleucrm.pages.LoginPage;
 import com.bleucrm.utilities.ConfigurationReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
 public class LoginStepDefs {
 
 
@@ -37,9 +40,5 @@ public class LoginStepDefs {
       LoginPage loginPage=new LoginPage();
       loginPage.login(username,password);
     }
-
-
-
-
 
 }
