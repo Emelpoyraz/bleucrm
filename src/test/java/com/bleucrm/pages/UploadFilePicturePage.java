@@ -66,4 +66,19 @@ public class UploadFilePicturePage {
 
     @FindBy(xpath = "//div/span[.='Send message …']")
     public WebElement notSentMessageVerification;
+
+
+    @FindBy(xpath = "//span[@id='bx-b-uploadfile-blogPostForm']")
+    public WebElement uploadIcon;
+
+
+    @FindBy(xpath = "(//td[@colspan='0'])[1]")
+    public WebElement uploadFileImageButton;
+
+
+
+    @FindBy(xpath = "//span[@class='files-text']")
+    public WebElement uploadedFile;
 }
+
+
