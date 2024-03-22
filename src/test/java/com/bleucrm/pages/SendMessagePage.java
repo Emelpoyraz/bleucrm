@@ -1,9 +1,13 @@
 package com.bleucrm.pages;
 
 import com.bleucrm.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class SendMessagePage {
 
@@ -67,5 +71,20 @@ public class SendMessagePage {
 
     @FindBy(xpath = "//div/span[.='Send message …']")
     public WebElement notSentMessageVerification;
+
+    @FindBy(xpath = "//span[@title='Link']")
+    public WebElement addLinkButton;
+
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-text")
+    public WebElement linkTextBox;
+
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-href")
+    public WebElement linkUrlBox;
+
+    @FindBy(id = "undefined")
+    public WebElement linkSaveButton;
+
+
+
 
 }

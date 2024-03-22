@@ -58,4 +58,25 @@ public class ActivityStreamPage extends BasePage{
             }
         }
     }
+
+
+    @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']//a")
+    public List<WebElement> messageLinks;
+
+    public boolean findLinkInMessage(String expectedText) {
+        for (WebElement link : messageLinks) {
+            if (link.getText().equals(expectedText)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void clickMessageLink(String expectedText) {
+        for (WebElement link : messageLinks) {
+            if (link.getText().equals(expectedText)) {
+                link.click();
+            }
+        }
+    }
 }
