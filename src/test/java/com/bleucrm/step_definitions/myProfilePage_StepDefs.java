@@ -42,16 +42,6 @@ public class myProfilePage_StepDefs {
     }
 
 
-    @Then("the user verify that the displayed email is the same as the user's account")
-    public void theUserVerifyThatTheDisplayedEmailIsTheSameAsTheUserSAccount() {
-
-        String displayedEmail =myProfilePage.actualEmail.getText();
-        String userAccountEmail = myProfilePage.userAccount.getText();
-
-        Assert.assertEquals(displayedEmail, userAccountEmail);
-
-    }
-
 
     @Then("the user verify that the displayed {string} is the same as the user's account")
     public void theUserVerifyThatTheDisplayedIsTheSameAsTheUserSAccount(String expectedEmail) {

@@ -13,6 +13,7 @@ public class MyProfilePage extends BasePage{
   @FindBy(css = "tr td.user-profile-nowrap-second")
   public WebElement actualEmail;
 
+
   @FindBy(xpath = "//span[.='My Profile']")
   public WebElement MyProfilePage;
 
