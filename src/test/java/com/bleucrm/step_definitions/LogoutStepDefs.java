@@ -25,12 +25,6 @@ public class LogoutStepDefs {
     @Then("The User sees below list")
     public void the_user_sees_below_list(List<String> expectedOptions) {
 
-        if (expectedOptions.size() == homePage.nameItem.size()) {
-            System.out.println("The user sees 5 options under the profile name.");
-        } else {
-            System.out.println("The user does NOT see 5 options under the profile name.");
-        }
-
         Assert.assertEquals(expectedOptions, BrowserUtils.getElementsText(homePage.nameItem));
 
 
