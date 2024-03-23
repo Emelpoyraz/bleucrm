@@ -3,7 +3,6 @@ package com.bleucrm.step_definitions;
 import com.bleucrm.pages.LoginPage;
 import com.bleucrm.utilities.ConfigurationReader;
 import com.bleucrm.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -49,7 +48,7 @@ public class LoginStepDefs {
 
     @Then("user lands on the {string} successfully")
     public void userLandsOnTheSuccessfully(String homepageUrl) {
-        String expectedHomePageLink= ConfigurationReader.getProperty("homepageUrl");
+        String expectedHomePageLink= ConfigurationReader.getProperty(homepageUrl);
         String actualHomePageLink = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualHomePageLink.contains(expectedHomePageLink));
     }
@@ -106,6 +105,6 @@ public class LoginStepDefs {
 
     @Then("user should be able to see password is in bullet signs by default")
     public void userShouldBeAbleToSeePasswordIsInBulletSignsByDefault() {
-        Assert.assertTrue(loginPage.password.getAttribute("type").equals("password"));
+        Assert.assertEquals(loginPage.password.getAttribute("type"),"password");
     }
 }
