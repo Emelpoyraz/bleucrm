@@ -19,7 +19,7 @@ Feature: Default
   @B32G4-93
   Scenario Outline:  Verify that the user can see 5 options under the profile name.
     Given the user logged in as "<UserType>"
-    When The user clicks the userName button
+    When The user clicks the profileName button
     Then The User sees below list
 
       | My Profile              |
