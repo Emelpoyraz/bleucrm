@@ -42,6 +42,10 @@ public class ActivityStreamPage extends BasePage{
 
         for (WebElement eachOption : allOptions) {
             if (eachOption.getText().equalsIgnoreCase(requiredTabName)){
+
+                if (requiredTabName.equalsIgnoreCase("file") || requiredTabName.equalsIgnoreCase("Appreciation") || requiredTabName.equalsIgnoreCase("Announcement") || requiredTabName.equalsIgnoreCase("Workflow")){
+                    moreTab.click();
+                }
                 eachOption.click();
                 break;
             }
