@@ -12,8 +12,8 @@ public class LogoutStepDefs {
 
     HomePage homePage = new HomePage();
 
-    @When("The user clicks the userName button")
-    public void the_user_clicks_the_user_name_button() {
+    @When("The user clicks the profileName button")
+    public void the_user_clicks_the_profile_name_button() {
         homePage.profileName.click();
     }
 

@@ -6,7 +6,7 @@ Feature: Default
   @B32G4-92
   Scenario Outline: Verify that the user can clicking the “Log out” button
     Given the user logged in as "<UserType>"
-    When The user clicks the userName button
+    When The user clicks the profileName button
     And The user clicks the logout button
 
     Examples:
