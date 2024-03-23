@@ -8,20 +8,24 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath="//input[@name='USER_LOGIN']")
+    @FindBy(xpath = "//input[@name='USER_LOGIN']")
     public WebElement userName;
 
-
-
-    @FindBy(xpath="//input[@name='USER_PASSWORD']")
+    @FindBy(xpath = "//input[@name='USER_PASSWORD']")
     public WebElement password;
 
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement submit;
+
+    @FindBy(xpath = "//div[@class='errortext']")
+    public WebElement incorrectLoginOrPasswordMessage;
+
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement rememberMeCheckBox;
 
 
     public void login(String userNameStr, String passwordStr) {
