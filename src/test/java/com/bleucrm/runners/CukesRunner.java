@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/bleucrm/step_definitions",
-        dryRun = false,
-        tags = "@wip",
+        dryRun = true,
+        tags = "@B32G4-102",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
