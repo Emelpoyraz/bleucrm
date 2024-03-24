@@ -1,9 +1,12 @@
 package com.bleucrm.pages;
 
 import com.bleucrm.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class UploadFilePicturePage {
 
@@ -79,6 +82,7 @@ public class UploadFilePicturePage {
     public WebElement uploadedFile;
 
 
+
     public void uploadFile(String fileType) {
 
 
@@ -92,11 +96,27 @@ public class UploadFilePicturePage {
         //it concatenates the project path and the file path to obtain the full path of the PNG file
         String fullFilePath = projectPath + "/" + filePath;
 
+        WebElement fileInput = Driver.getDriver().findElement(By.xpath("(//input[@type='file'])[1]"));
+
+        fileInput.sendKeys(fullFilePath);
+
     }
 
 
     @FindBy(xpath = "//span[contains(@id,'check-in-text-n')]")
     public WebElement insertDynamic;
+
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement fileRemoveButton;
+
+
+
+    @FindBy(xpath = "//span[contains(@id, 'bxid')]")
+    public List<WebElement> insertedItemsInTextArea;
+
+
+
 
 }
 
