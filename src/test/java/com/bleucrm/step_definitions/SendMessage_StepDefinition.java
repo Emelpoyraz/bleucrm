@@ -10,11 +10,18 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class SendMessage_StepDefinition {
 
     LoginPage loginPage = new LoginPage();
     SendMessagePage sendMessagePage = new SendMessagePage();
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
 
     @When("the user clicks on the Message tab")
@@ -22,6 +29,7 @@ public class SendMessage_StepDefinition {
 
         sendMessagePage.messageTab.click();
     }
+
     @Then("the user should see fields for Message Content")
     public void the_user_should_see_fields_for_message_content() {
 
@@ -32,11 +40,13 @@ public class SendMessage_StepDefinition {
         Driver.getDriver().switchTo().parentFrame();
 
     }
+
     @Then("the user should see All employees by default as Recipient")
     public void the_user_should_see_all_employees_by_default_as_recipient() {
 
         Assert.assertTrue(sendMessagePage.AllEmployees.isDisplayed());
     }
+
     @Then("the user enters {string} in the message content field")
     public void the_user_enters_in_the_message_content_field(String message) {
 
@@ -47,14 +57,16 @@ public class SendMessage_StepDefinition {
         Driver.getDriver().switchTo().parentFrame();
 
     }
+
     @Then("clicks on the send button")
     public void clicks_on_the_send_button() {
 
         sendMessagePage.sendButton.click();
     }
+
     @Then("the message should be sent successfully to the specified recipient\\(s)")
     public void the_message_should_be_sent_successfully_to_the_specified_recipient_s() {
-
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[.='Hello, Team!'])[1]")));
         Assert.assertTrue(sendMessagePage.proofOfSucessfullMessage.isDisplayed());
     }
 
