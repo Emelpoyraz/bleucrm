@@ -32,6 +32,7 @@ public class ConfigurationReader {
     //4- Use "properties" object to read from the file (read properties)
 
     public static String getProperty(String keyword){
+
         return properties.getProperty(keyword);
     }
 
